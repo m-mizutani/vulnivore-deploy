@@ -64,7 +64,7 @@ jobs:
             " \
             --args serve \
             --set-secrets "
-              VULNIVORE_GITHUB_APP_PRIVATE_KEY=projects/${{ env.GCP_PROJECT_NUMBER }}/secrets/VULNIVORE_GITHUB_APP_PRIVATE_KEY:latest,
-              VULNIVORE_GITHUB_APP_SECRET=projects/${{ env.GCP_PROJECT_NUMBER }}/secrets/VULNIVORE_GITHUB_APP_SECRET:latest
+              VULNIVORE_GITHUB_APP_PRIVATE_KEY=projects/${{ env.GCP_PROJECT_NAME }}/secrets/VULNIVORE_GITHUB_APP_PRIVATE_KEY:latest,
+              VULNIVORE_GITHUB_APP_SECRET=projects/${{ env.GCP_PROJECT_NAME }}/secrets/VULNIVORE_GITHUB_APP_SECRET:latest
             " \
             --service-account=vulnivore@${{ env.GCP_PROJECT_NAME }}.iam.gserviceaccount.com
