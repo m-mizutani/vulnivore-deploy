@@ -42,7 +42,7 @@ jobs:
         run: |
           gcloud run deploy vulnivore \
             --image=${{ env.TAG_NAME }} \
-            --region=asia-northeast-1 \
+            --region=asia-northeast1 \
             --platform=managed \
             --allow-unauthenticated \
             --service-account=vulnivore@mztn-gcp-ops.iam.gserviceaccount.com
