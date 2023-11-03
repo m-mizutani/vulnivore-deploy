@@ -31,3 +31,18 @@ jobs:
         with:
           push: true
           tags: asia-northeast1-docker.pkg.dev/mztn-gcp-ops/service-images/${{ env.TAG_NAME }}
+
+      - name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@v1"
+        with:
+          credentials_json: ${{ secrets.GOOGLE_CLOUD_SA_KEY }}
+          service_account: "vulnivore-deployer@mztn-gcp-ops.iam.gserviceaccount.com"
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy vulnivore \
+            --image=${{ env.TAG_NAME }} \
+            --region=asia-northeast-1 \
+            --platform=managed \
+            --allow-unauthenticated \
+            --service-account=vulnivore@mztn-gcp-ops.iam.gserviceaccount.com
