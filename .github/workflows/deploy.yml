@@ -48,6 +48,4 @@ jobs:
             --region=asia-northeast1 \
             --platform=managed \
             --allow-unauthenticated \
-            --member=allUsers \
-            --role=roles/run.invoker \
             --service-account=vulnivore@mztn-gcp-ops.iam.gserviceaccount.com
