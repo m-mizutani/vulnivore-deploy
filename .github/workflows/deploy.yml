@@ -43,9 +43,11 @@ jobs:
 
       - name: Deploy to Cloud Run
         run: |
-          gcloud run deploy vulnivore \
+          gcloud beta run deploy vulnivore \
             --image=asia-northeast1-docker.pkg.dev/mztn-gcp-ops/service-images/${{ env.TAG_NAME }} \
             --region=asia-northeast1 \
             --platform=managed \
             --allow-unauthenticated \
+            --member=allUsers \
+            --role=roles/run.invoker \
             --service-account=vulnivore@mztn-gcp-ops.iam.gserviceaccount.com
