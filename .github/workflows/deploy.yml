@@ -63,8 +63,5 @@ jobs:
               VULNIVORE_FIRESTORE_COLLECTION=vulnivore
             " \
             --args serve \
-            --set-secrets "
-              VULNIVORE_GITHUB_APP_PRIVATE_KEY=VULNIVORE_GITHUB_APP_PRIVATE_KEY:latest,
-              VULNIVORE_GITHUB_APP_SECRET=VULNIVORE_GITHUB_APP_SECRET:latest
-            " \
+            --set-secrets "VULNIVORE_GITHUB_APP_PRIVATE_KEY=VULNIVORE_GITHUB_APP_PRIVATE_KEY:latest,VULNIVORE_GITHUB_APP_SECRET=VULNIVORE_GITHUB_APP_SECRET:latest" \
             --service-account=vulnivore@${{ env.GCP_PROJECT_NAME }}.iam.gserviceaccount.com
