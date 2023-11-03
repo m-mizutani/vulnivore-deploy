@@ -51,9 +51,11 @@ jobs:
             --image=${{ env.GCP_REGISTRY }}/${{ env.GCP_PROJECT_NAME }}/service-images/${{ env.TAG_NAME }} \
             --region=${{ env.GCP_REGION }} \
             --platform=managed \
+            --port 8192 \
             --allow-unauthenticated \
             --ingress=all \
             --set-env-vars "
+              VULNIVORE_ADDR=0.0.0.0:8192,
               VULNIVORE_POLICY_DIR=/policy,
               VULNIVORE_LOG_FORMAT=json,
               VULNIVORE_GITHUB_APP_ID=417839,
