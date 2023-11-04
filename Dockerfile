@@ -1,4 +1,4 @@
-FROM ghcr.io/m-mizutani/vulnivore:v0.0.2
+FROM ghcr.io/m-mizutani/vulnivore:v0.0.3
 
 ADD policy /policy
 WORKDIR /
